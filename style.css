@@ -65,7 +65,7 @@ select {
 }
 
 :root {
-  --primary-clr-600: hsl(231, 69%, 20%);
+  --primary-clr-600: hsl(231, 32%, 21%);
   --primary-clr-400: hsl(231, 69%, 60%);
   --primary-clr-300: hsl(0, 94%, 66%);
   --primary-clr-200: hsl(231, 69%, 63%);
@@ -77,7 +77,10 @@ select {
   --black: #000;
 
   --ff: 'Rubik', sans-serif;
-  --fs: 1rem;
+
+  --fs-700: clamp(2rem, 4vw, 3rem);
+  --fs-500: ;
+  --fs-400: clamp(1rem, 1vw ,1.125rem);
 
   --fw-semibold: 500;
   --fw-regular: 400;
@@ -93,6 +96,7 @@ body {
   font-family: var(--ff);
   font-size: var(--fs);
   margin-top: 2rem;
+  overflow-x: hidden;
 }
 
 @media (min-width: 50em) {
@@ -171,7 +175,24 @@ header {
 /* MAIN */
 
 /* bookmark section */
+.bookmark-section__background-wrapper {
+  position: relative;
+}
+
+.bookmark-section__background-wrapper::after {
+  content: "";
+  position: absolute;
+  right: -8.97%;
+  bottom: 0;
+  width: 90%;
+  height: 80%;
+  background: var(--primary-clr-400);
+  z-index: -1;
+  border-radius: 0 0 0 30%;
+}
+
 .bookmark-section__text {
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -227,31 +248,75 @@ header {
   margin-block: 3rem;
 }
 
+.extension-card-wrapper {
+  position: relative;
+}
+
 .extension-card {
-  padding: 1.5rem;
-  margin-block: 2rem;
+  padding-block: 1.5rem;
+  margin-block: 3rem;
   border-radius: .75rem;
-  box-shadow: 0rem .2rem 1rem .2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0rem .25rem .5rem .2rem rgba(0, 0, 0, .1);
 }
 
 .extension-card__text {
-  padding-block: 1.25rem;
+  padding-block: 1.25rem 2rem;
+}
+
+.extension-card__text {
+  letter-spacing: 1px;
 }
 
 .extension-card img {
   margin: 0 auto;
 }
 
+.extension-button-wrapper {
+  padding-inline: 2rem;
+}
+
 /* ACCORDION SECTION */
+.accordion-section {
+  padding-block: 6rem;
+}
 
 .accordion-section__text{
   text-align: center;
 }
 
+.accordion-section__text h2 {
+  line-height: 1.3;
+}
+
+.accordion-section__text p {
+  margin-block: 1.75rem;
+}
+
+.accordion-section__faq {
+  padding-block: 1rem;
+  border-bottom: 2px solid hsl(0, 0%, 91%);
+}
+
+.accordion-section button {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion-section .center {
+  margin-top: 3rem;
+}
+
 /* CTA SECTION */
+
 .cta-section {
   text-align: center;
   padding-block: 4rem;
+}
+
+.cta-section__text h2 {
+  font-weight: var(--fw-regular);
+  line-height: 1.1;
+  padding-top: .75rem;
 }
 
 .cta-section, .cta-section p, .cta-section .cta-section__button{
@@ -260,13 +325,14 @@ header {
 
 .cta-section p{
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  font-size: .750rem;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  margin-top: 1.8rem;
+  margin-top: 2rem;
 }
 
 .form input {
@@ -278,10 +344,11 @@ header {
 
 .form input[type="text"] {
   padding-left: 1.25rem;
+  font-size: .937rem;
 }
 
 .form input[type="text"]::placeholder {
-  opacity: .4;
+  opacity: .3;
 }
 
 .form .cta-section__button{
@@ -303,6 +370,10 @@ footer {
   padding-block: 2rem;
 }
 
+/* img .filter-white {
+  filter: invert(100%) sepia(1%) saturate(5%) hue-rotate(23deg) brightness(103%) contrast(101%);
+} */
+
 .footer-wrapper{
   display: flex;
   flex-direction: column;
@@ -319,10 +390,11 @@ footer {
 .footer-list {
   text-align: center;
   text-transform: uppercase;
+  padding-block: 1.25rem;
 }
 
 .footer-list > li {
-  margin-block: 1rem;
+  margin-block: 1.75rem;
 }
 
 @media (min-width: 50em) {
@@ -332,14 +404,14 @@ footer {
 }
 
 .footer-list a{
-  color: var(--white);
+  color: hsl(216, 100%, 98%);
   letter-spacing: 2px;
 }
 
 .social-links{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2.75rem;
 }
 
 /* BUTTONS */
@@ -359,6 +431,7 @@ button{
 .button-group button {
   padding: .5em;
   border-radius: .3rem;
+  box-shadow: 0rem .25rem .25rem 0rem rgba(0, 0, 0, .1);
 }
 
 @media (min-width: 50em) {
@@ -423,20 +496,34 @@ button.firefox:hover {
 button.more-info{
   border-radius: .3rem;
   padding: .5em 1em;
+  box-shadow: 0rem .25rem .25rem 0rem rgba(0, 0, 0, .1);
 }
 
 /* extension buttons */
 
 .extension-card button {
   width: 100%;
-  padding-block: .5em;
+  padding-block: .7em;
   border-radius: .4rem;
+  box-shadow: 0rem .25rem .25rem 0rem rgba(0, 0, 0, .1);
 }
 
 .extension-card button:hover {
   background-color: var(--white);
   border-color: var(--primary-clr-400);
   color: var(--primary-clr-400);
+}
+
+/* FAQ ACCORDION BUTTONS */
+
+.accordion-section__faq h3 {
+
+  font-size: var(--fs);
+  font-weight: var(--fw-regular);
+}
+
+.accordion-section__faq button {
+  background-color: var(--white);
 }
 
 /* ATTRIBUTION */
@@ -483,4 +570,13 @@ button.more-info{
 
 .neutral-clr-200 {
   background-color: var(--neutral-clr-200);
+}
+
+.hidden {
+  display: none;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
 }
