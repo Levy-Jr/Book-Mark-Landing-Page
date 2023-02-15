@@ -83,7 +83,7 @@
     </div>
 
     <div class="tab-panel" id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <div>
+      <div class="tab-panel__image-wrapper">
         <img src="images/illustration-features-tab-1.svg" alt="">
       </div>
       <div class="tab-panel__text">
@@ -96,28 +96,30 @@
       </div>
     </div>
 
-    <div class="tab-panel" id="tabpanel-2" role="tabpanel-2" tabindex="0" aria-labelledby="tab-2">
-      <div><img src="images/illustration-features-tab-2.svg" alt=""></div>
+    <div class="tab-panel hidden" id="tabpanel-2" role="tabpanel-2" tabindex="0" aria-labelledby="tab-2">
+      <div class="tab-panel__image-wrapper">
+        <img src="images/illustration-features-tab-2.svg" alt="">
+      </div>
       <div class="tab-panel__text">
         <h3>Intelligent search</h3>
         <p>
           Our powerful search feature will help you find saved sites in no time at all.
           No need to trawl through all of your bookmarks.
         </p>
-
         <button class="more-info | primary-clr-400">More Info</button>
       </div>
     </div>
 
-    <div class="tab-panel" id="tabpanel-3" role="tabpanel-3" tabindex="0" aria-labelledby="tab-3">
-      <div><img src="images/illustration-features-tab-3.svg" alt=""></div>
+    <div class="tab-panel hidden" id="tabpanel-3" role="tabpanel-3" tabindex="0" aria-labelledby="tab-3">
+      <div class="tab-panel__image-wrapper">
+        <img src="images/illustration-features-tab-3.svg" alt="">
+      </div>
       <div class="tab-panel__text">
         <h3>Share your bookmarks</h3>
         <p>
           Easily share your bookmarks and collections with others. Create a shareable
           link that you can send at the click of a button.
         </p>
-        
         <button class="more-info | primary-clr-400">More Info</button>
       </div>
     </div>
@@ -138,9 +140,11 @@
     <article class="extension-card">
       <div class="extension-card__info">
         <img src="images/logo-chrome.svg" alt="chrome logo">
-        <div class="extension-card__text">
-          <h3>Add to Chrome</h3>
-          <p>Minimum version 62</p>
+        <div class="extension-card__text-wrapper">
+          <div class="extension-card__text">
+            <h3>Add to Chrome</h3>
+            <p>Minimum version 62</p>
+          </div>
         </div>
       </div>
       <div class="extension-button-wrapper">
@@ -151,9 +155,11 @@
     <article class="extension-card">
       <div class="extension-card__info">
         <img src="images/logo-firefox.svg" alt="firefox logo">
-        <div class="extension-card__text">
-          <h3>Add to Firefox</h3>
-          <p>Minimum version 55</p>
+        <div class="extension-card__text-wrapper">
+          <div class="extension-card__text">
+            <h3>Add to Firefox</h3>
+            <p>Minimum version 55</p>
+          </div>
         </div>
       </div>
       <div class="extension-button-wrapper">
@@ -164,9 +170,11 @@
     <article class="extension-card">
       <div class="extension-card__info">
         <img src="images/logo-opera.svg" alt="opera logo">
-        <div class="extension-card__text">
-          <h3>Add to Opera</h3>
-          <p>Minimum version 46</p>
+        <div class="extension-card__text-wrapper">
+          <div class="extension-card__text">
+            <h3>Add to Opera</h3>
+            <p>Minimum version 46</p>
+          </div>
         </div>
       </div>
       <div class="extension-button-wrapper">
@@ -180,7 +188,6 @@
   <section class="accordion-section | container">
   <div class="accordion-section__text">
     <h2>Frequently Asked Questions</h2>
-    
     <p>
       Here are some of our FAQs. If you have any other questions you’d like
       answered please feel free to email us.
@@ -190,7 +197,7 @@
   <div class="faq-wrapper">
     <div class="accordion-section__faq">
       <!-- Question 1 -->
-      <h3><button aria-expanded="false">What is Bookmark?</button></h3>
+      <h3><button aria-expanded="false"><span class="accordion-section__title">What is Bookmark?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 1 -->
       <p class="hidden">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
@@ -199,7 +206,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 2 -->
-      <h3><button aria-expanded="false">How can I request a new browser?</button></h3>
+      <h3><button aria-expanded="false"><span class="accordion-section__title">How can I request a new browser?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 2 -->
       <p class="hidden">
         Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
@@ -210,7 +217,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 3 -->
-      <h3><button aria-expanded="false">Is there a mobile app?</button></h3>
+      <h3><button aria-expanded="false"><span class="accordion-section__title">Is there a mobile app?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 3 -->
       <p class="hidden">
         Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
@@ -220,7 +227,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 4 -->
-      <h3><button aria-expanded="false">What about other Chromium browsers?</button></h3>
+      <h3><button aria-expanded="false"><span class="accordion-section__title">What about other Chromium browsers?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 4 -->
       <p class="hidden">
         Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
