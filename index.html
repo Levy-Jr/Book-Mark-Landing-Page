@@ -19,25 +19,33 @@
   <script src="script.js" defer></script>
   
 </head>
-<body>
+<body data-menu>
 
   <header>
     <div class="container">
       <div class="nav-wrapper">
-        <a class="logo-wrapper" aria-label="home">
+        <a class="logo-wrapper" data-menu aria-label="home">
           <img src="images/logo-bookmark.svg" alt="home">
         </a>
 
-        <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+        <button class="mobile-nav-toggle" data-menu-button data-menu aria-controls="primary-navigation">
           <span class="sr-only">Menu</span>
         </button>
 
-      <nav class="primary-navigation" id="primary-navigation">
-        <ul aria-label="primary" class="nav-list">
+      <nav class="primary-navigation" data-menu id="primary-navigation">
+        <ul aria-label="primary" data-menu class="nav-list">
           <li><a href="#">Features</a></li>
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Contact</a></li>
           <li class="nav-list__login-button"><a href="#">Login</a></li>
+        </ul>
+        <ul class="header-social-links" data-menu>
+          <li>
+            <a href="#"><img src="images/icon-facebook.svg" alt="facebook icon"></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/icon-twitter.svg" alt="twitter icon"></a>
+          </li>
         </ul>
       </nav>
       
@@ -75,53 +83,55 @@
       </p>
     </div>
 
-    <div class="tab-buttons" role="tablist">
-      <button class="active" role="tab" aria-selected="true" aria-controls="tabpanel-1" tab-index="-1" id="tab-1">Simple Bookmarking</button>
+    <div class="tab-buttons" data-tab-buttons-parent role="tablist">
+      <button class="active" role="tab" aria-selected="true" aria-controls="tabpanel-1" tab-index="-1" id="tab-1" data-tab-button>Simple Bookmarking</button>
 
-      <button role="tab" aria-selected="false" aria-controls="tabpanel-2" tab-index="-1" id="tab-2">Speedy Searching</button>
+      <button role="tab" aria-selected="false" aria-controls="tabpanel-2" tab-index="-1" id="tab-2" data-tab-button>Speedy Searching</button>
 
-      <button role="tab" aria-selected="false" aria-controls="tabpanel-3" tab-index="-1" id="tab-3">Easy Sharing</button>
+      <button role="tab" aria-selected="false" aria-controls="tabpanel-3" tab-index="-1" id="tab-3" data-tab-button>Easy Sharing</button>
     </div>
 
-    <div class="tab-panel" id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <div class="tab-panel__image-wrapper">
-        <img src="images/illustration-features-tab-1.svg" alt="">
+    <div class="tab-panel-wrapper" data-tab-panel-wrapper>
+      <div class="tab-panel active" id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+        <div class="tab-panel__image-wrapper">
+          <img src="images/illustration-features-tab-1.svg" alt="">
+        </div>
+        <div class="tab-panel__text">
+          <h3>Bookmark in one click</h3>
+          <p>
+            Organize your bookmarks however you like. Our simple drag-and-drop interface
+            gives you complete control over how you manage your favourite sites.
+          </p>
+          <button class="more-info | primary-clr-400">More Info</button>
+        </div>
       </div>
-      <div class="tab-panel__text">
-        <h3>Bookmark in one click</h3>
-        <p>
-          Organize your bookmarks however you like. Our simple drag-and-drop interface
-          gives you complete control over how you manage your favourite sites.
-        </p>
-        <button class="more-info | primary-clr-400">More Info</button>
-      </div>
-    </div>
 
-    <div class="tab-panel hidden" id="tabpanel-2" role="tabpanel-2" tabindex="0" aria-labelledby="tab-2">
-      <div class="tab-panel__image-wrapper">
-        <img src="images/illustration-features-tab-2.svg" alt="">
+      <div class="tab-panel" id="tabpanel-2" role="tabpanel-2" tabindex="0" aria-labelledby="tab-2">
+        <div class="tab-panel__image-wrapper">
+          <img src="images/illustration-features-tab-2.svg" alt="">
+        </div>
+        <div class="tab-panel__text">
+          <h3>Intelligent search</h3>
+          <p>
+            Our powerful search feature will help you find saved sites in no time at all.
+            No need to trawl through all of your bookmarks.
+          </p>
+          <button class="more-info | primary-clr-400">More Info</button>
+        </div>
       </div>
-      <div class="tab-panel__text">
-        <h3>Intelligent search</h3>
-        <p>
-          Our powerful search feature will help you find saved sites in no time at all.
-          No need to trawl through all of your bookmarks.
-        </p>
-        <button class="more-info | primary-clr-400">More Info</button>
-      </div>
-    </div>
 
-    <div class="tab-panel hidden" id="tabpanel-3" role="tabpanel-3" tabindex="0" aria-labelledby="tab-3">
-      <div class="tab-panel__image-wrapper">
-        <img src="images/illustration-features-tab-3.svg" alt="">
-      </div>
-      <div class="tab-panel__text">
-        <h3>Share your bookmarks</h3>
-        <p>
-          Easily share your bookmarks and collections with others. Create a shareable
-          link that you can send at the click of a button.
-        </p>
-        <button class="more-info | primary-clr-400">More Info</button>
+      <div class="tab-panel" id="tabpanel-3" role="tabpanel-3" tabindex="0" aria-labelledby="tab-3">
+        <div class="tab-panel__image-wrapper">
+          <img src="images/illustration-features-tab-3.svg" alt="">
+        </div>
+        <div class="tab-panel__text">
+          <h3>Share your bookmarks</h3>
+          <p>
+            Easily share your bookmarks and collections with others. Create a shareable
+            link that you can send at the click of a button.
+          </p>
+          <button class="more-info | primary-clr-400">More Info</button>
+        </div>
       </div>
     </div>
 
@@ -198,18 +208,18 @@
   <div class="faq-wrapper">
     <div class="accordion-section__faq">
       <!-- Question 1 -->
-      <h3><button aria-expanded="false"><span class="accordion-section__title">What is Bookmark?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What is Bookmark?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 1 -->
-      <p class="hidden">
+      <p class="hidden" data-accordion-section__p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
         justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
       </p>
     </div>
     <div class="accordion-section__faq">
       <!-- Question 2 -->
-      <h3><button aria-expanded="false"><span class="accordion-section__title">How can I request a new browser?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">How can I request a new browser?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 2 -->
-      <p class="hidden">
+      <p class="hidden" data-accordion-section__p>
         Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
         Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
         ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
@@ -218,9 +228,9 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 3 -->
-      <h3><button aria-expanded="false"><span class="accordion-section__title">Is there a mobile app?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">Is there a mobile app?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 3 -->
-      <p class="hidden">
+      <p class="hidden" data-accordion-section__p>
         Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
         urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
         sollicitudin ex et ultricies bibendum.
@@ -228,9 +238,9 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 4 -->
-      <h3><button aria-expanded="false"><span class="accordion-section__title">What about other Chromium browsers?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What about other Chromium browsers?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
       <!-- Answer 4 -->
-      <p class="hidden">
+      <p class="hidden" data-accordion-section__p>
         Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
         vitae neque eget nisl gravida pellentesque non ut velit.
       </p>
@@ -249,8 +259,11 @@
         <h2>Stay up-to-date with what we’re doing</h2>
       </div>
       <form class="form" data-form action="">
-        <input type="text" placeholder="Enter your email address">
-        <input class="cta-section__button | primary-clr-300" type="submit" value="Contact Us">
+        <div>
+          <input data-input-email type="text" placeholder="Enter your email address">
+          <span class="textError">Whoops, make sure it's an email</span>
+        </div>
+        <input data-input-submit class="cta-section__button | primary-clr-300" type="submit" value="Contact Us">
       </form>
     </div>
   </section>
