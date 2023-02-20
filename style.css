@@ -491,7 +491,7 @@ header {
 
 .extension-card {
   margin: 0 auto;
-  max-width: 17.5rem;
+  width: min(100%, 17.5rem);
   padding-block: 1.5rem;
   margin-block: 3rem;
   border-radius: .75rem;
