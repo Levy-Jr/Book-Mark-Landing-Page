@@ -56,7 +56,7 @@
   <main>
   <section class="bookmark-section | container">
     <div class="bookmark-section__background-wrapper">
-      <img src="images/illustration-hero.svg" alt="">
+      <img src="images/illustration-hero.svg" alt="hero image illustration">
     </div>
     <div>
       <div class="bookmark-section__text">
@@ -84,17 +84,17 @@
     </div>
 
     <div class="tab-buttons" data-tab-buttons-parent role="tablist">
-      <button class="active" role="tab" aria-selected="true" aria-controls="tabpanel-1" tab-index="-1" id="tab-1" data-tab-button>Simple Bookmarking</button>
+      <button class="active" role="tab" data-tab-button>Simple Bookmarking</button>
 
-      <button role="tab" aria-selected="false" aria-controls="tabpanel-2" tab-index="-1" id="tab-2" data-tab-button>Speedy Searching</button>
+      <button role="tab" data-tab-button>Speedy Searching</button>
 
-      <button role="tab" aria-selected="false" aria-controls="tabpanel-3" tab-index="-1" id="tab-3" data-tab-button>Easy Sharing</button>
+      <button role="tab" data-tab-button>Easy Sharing</button>
     </div>
 
     <div class="tab-panel-wrapper" data-tab-panel-wrapper>
-      <div class="tab-panel active" id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+      <div class="tab-panel active">
         <div class="tab-panel__image-wrapper">
-          <img src="images/illustration-features-tab-1.svg" alt="">
+          <img src="images/illustration-features-tab-1.svg" alt="bookmark illustration">
         </div>
         <div class="tab-panel__text">
           <h3>Bookmark in one click</h3>
@@ -106,9 +106,9 @@
         </div>
       </div>
 
-      <div class="tab-panel" id="tabpanel-2" role="tabpanel-2" tabindex="0" aria-labelledby="tab-2">
+      <div class="tab-panel">
         <div class="tab-panel__image-wrapper">
-          <img src="images/illustration-features-tab-2.svg" alt="">
+          <img src="images/illustration-features-tab-2.svg" alt="speedy searching illustration">
         </div>
         <div class="tab-panel__text">
           <h3>Intelligent search</h3>
@@ -120,9 +120,9 @@
         </div>
       </div>
 
-      <div class="tab-panel" id="tabpanel-3" role="tabpanel-3" tabindex="0" aria-labelledby="tab-3">
+      <div class="tab-panel">
         <div class="tab-panel__image-wrapper">
-          <img src="images/illustration-features-tab-3.svg" alt="">
+          <img src="images/illustration-features-tab-3.svg" alt="easy sharing illustration">
         </div>
         <div class="tab-panel__text">
           <h3>Share your bookmarks</h3>
@@ -208,7 +208,7 @@
   <div class="faq-wrapper">
     <div class="accordion-section__faq">
       <!-- Question 1 -->
-      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What is Bookmark?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What is Bookmark?<span class="accordion-icon"><img class="icon-arrow" data-icon-arrow src="images/icon-arrow.svg" alt="arrow icon"></span></span></button></h3>
       <!-- Answer 1 -->
       <p class="hidden" data-accordion-section__p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
@@ -217,7 +217,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 2 -->
-      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">How can I request a new browser?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">How can I request a new browser?<span class="accordion-icon"><img class="icon-arrow" data-icon-arrow src="images/icon-arrow.svg" alt="arrow icon"></span></span></button></h3>
       <!-- Answer 2 -->
       <p class="hidden" data-accordion-section__p>
         Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
@@ -228,7 +228,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 3 -->
-      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">Is there a mobile app?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">Is there a mobile app?<span class="accordion-icon"><img class="icon-arrow" data-icon-arrow src="images/icon-arrow.svg" alt="arrow icon"></span></span></button></h3>
       <!-- Answer 3 -->
       <p class="hidden" data-accordion-section__p>
         Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
@@ -238,7 +238,7 @@
     </div>
     <div class="accordion-section__faq">
       <!-- Question 4 -->
-      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What about other Chromium browsers?<span class="accordion-icon"><img src="images/icon-arrow.svg" alt=""></span></span></button></h3>
+      <h3><button data-faq-button aria-expanded="false"><span class="accordion-section__title">What about other Chromium browsers?<span class="accordion-icon"><img class="icon-arrow" data-icon-arrow src="images/icon-arrow.svg" alt="arrow icon"></span></span></button></h3>
       <!-- Answer 4 -->
       <p class="hidden" data-accordion-section__p>
         Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
@@ -259,9 +259,9 @@
         <h2>Stay up-to-date with what we’re doing</h2>
       </div>
       <form class="form" data-form action="">
-        <div>
+        <div class="inputText-wrapper" data-inputEmail-wrapper>
           <input data-input-email type="text" placeholder="Enter your email address">
-          <span class="textError">Whoops, make sure it's an email</span>
+          <span class="textError"></span>
         </div>
         <input data-input-submit class="cta-section__button | primary-clr-300" type="submit" value="Contact Us">
       </form>
@@ -284,17 +284,17 @@
       </div>
       <ul class="social-links" aria-label="social links">
         <li>
-          <a href="#" aria-label="facebook"><img src="images/icon-facebook.svg" alt=""></a>
+          <a href="#" aria-label="facebook"><img src="images/icon-facebook.svg" alt="facebook icon"></a>
         </li>
         <li>
-          <a href="#" aria-label="twitter"><img src="images/icon-twitter.svg" alt=""></a>
+          <a href="#" aria-label="twitter"><img src="images/icon-twitter.svg" alt="twitter icon"></a>
         </li>
       </ul>
     </div>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Levy-Jr">Levy Júnior</a>.
+    </p>
   </footer>
-  <!--     <p class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="https://github.com/Levy-Jr">Levy Júnior</a>.
-      </p> -->
 </body>
 </html>

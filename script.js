@@ -53,7 +53,13 @@ const faqButton = document.querySelectorAll('[data-faq-button]')
 
 faqButton.forEach(button => {
   button.addEventListener('click', () => {
-    button.closest('.accordion-section__faq').querySelector('[data-accordion-section__p]').classList.toggle('hidden')
+    const parentButtonElement = button.closest('.accordion-section__faq')
+    
+    parentButtonElement.querySelector('[data-accordion-section__p]').classList.contains('hidden') ? button.setAttribute('aria-expanded', true) : button.setAttribute('aria-expanded', false)
+
+    parentButtonElement.querySelector('[data-accordion-section__p]').classList.toggle('hidden')
+
+    button.querySelector('[data-icon-arrow]').classList.toggle('active')
   })
 })
 
@@ -61,19 +67,43 @@ faqButton.forEach(button => {
 
 const form = document.querySelector('[data-form]')
 
-const inputText = document.querySelector('[data-input-email]')
+const inputEmail = document.querySelector('[data-input-email]')
+const textError = document.querySelector('.textError')
+
 const inputButton = document.querySelector('[data-input-submit]')
 
-const setSucessFor = (input, message) => {
-  
+const checkInput = () => {
+  const emailValue = inputEmail.value.trim()
+
+  if(emailValue == ""){
+    setErrorFor(inputEmail, "Email cannot be blank")
+  } else if(!validateUserEmail(emailValue)) {
+    setErrorFor(inputEmail, "Whoops, make sure it's an email")
+  } else if(validateUserEmail(emailValue)) {
+    setSucessFor(inputEmail)
+  }
 }
 
-const validateUserEmail = () => {
+const setSucessFor = (input) => {
+  const parentElement = input.closest('.inputText-wrapper')
+  if(parentElement.hasAttribute('data-input-error')){
+    delete parentElement.dataset.inputError
+  }
+}
 
+const setErrorFor = (input, message) => {
+  const parentElement = input.closest('.inputText-wrapper')
+  parentElement.dataset.inputError = true
+  input.placeholder = 'example@email/com'
+  textError.innerText = message
+}
+
+const validateUserEmail = (email) => {
+  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
 }
 
 form.addEventListener('submit', e => {
   e.preventDefault()
 
-
+  checkInput()
 })
